@@ -1,0 +1,6 @@
+{
+  "name": "CellBalance - Bilan Santé Cellulaire & Test Oméga-3",
+  "description": "Évaluez votre état d'inflammation cellulaire silencieuse et découvrez votre équilibre Oméga-6 / Oméga-3 avec notre quiz interactif et test sanguin certifié.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
