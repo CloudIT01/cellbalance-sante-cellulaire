@@ -33,7 +33,7 @@ export const FaqSection: React.FC = () => {
     {
       question: 'Comment interpréter mes résultats et que faire si mon ratio est déséquilibré ?',
       answer:
-        'Votre rapport de résultats en ligne est extrêmement clair et visuel. Il détaille la proportion exacte de 11 acides gras, votre ratio Oméga-6 : Oméga-3, votre indice de fluidité membranaire et votre score de santé mentale. Si votre ratio dépasse 3:1 (ce qui est le cas de 97% des personnes au premier test), un protocole nutritionnel ciblé associant polyphénols d’olive et oméga-3 sauvages vous permettra de rétablir un équilibre optimal en 120 jours.'
+        'Votre rapport de résultats en ligne est extrêmement clair et visuel. Il détaille la proportion exacte de 11 acides gras, votre ratio Oméga-6 : Oméga-3, votre indice de fluidité membranaire et votre score de santé mentale. Si votre ratio dépasse 3:1 (ce qui est le cas de 95 % de la population européenne au premier test), un protocole nutritionnel ciblé associant polyphénols d’olive et oméga-3 sauvages vous permettra de rétablir un équilibre optimal en 120 jours.'
     },
     {
       question: 'Combien de temps faut-il pour recevoir les résultats ?',

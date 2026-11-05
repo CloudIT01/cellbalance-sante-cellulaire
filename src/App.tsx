@@ -28,7 +28,7 @@ function LandingPageContent() {
         <span className="inline-flex items-center gap-1.5">
           <Sparkles className="w-3.5 h-3.5 text-emerald-300" />
           <span>
-            97 % des Européens sont en état de déséquilibre cellulaire silencieux.
+            95 % des Européens sont en état de déséquilibre cellulaire silencieux.
           </span>
           <button
             onClick={() => scrollTo('quiz')}

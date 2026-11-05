@@ -327,7 +327,7 @@ export function calculateQuizResult(answers: Record<string, string>): QuizAnalys
   }
 
   const keyFindings: string[] = [
-    `Ratio Oméga-6 / Oméga-3 estimé : ${estimatedRatio} (Norme OMS recommandée ≤ 3:1).`,
+    `Ratio Oméga-6 / Oméga-3 estimé : ${estimatedRatio} (Norme OMS recommandée ≤ 3:1 vs moyenne de 15:1 touchant 95 % des Européens).`,
     `Score estimé de perméabilité membranaire : ${membraneFluidityScore}% (une membrane souple permet l’entrée des nutriments et la sortie des toxines).`,
     'Tendance marquée à l’accumulation d’acides gras pro-inflammatoires (acide arachidonique issu des huiles et élevages industriels).'
   ];

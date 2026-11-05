@@ -206,7 +206,7 @@ export const ResultReport: React.FC<ResultReportProps> = ({ result, onReset }) =
             <span>Que se passe-t-il au niveau de vos cellules ?</span>
           </div>
           <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-            Vos membranes cellulaires sont composées d'une double couche de lipides. Lorsque l'alimentation
+            Vos membranes cellulaires sont composées d'une double couche de lipides. Comme chez plus de <strong>95 % de la population européenne</strong>, lorsque l'alimentation
             apporte trop d'<strong>Oméga-6</strong> (huiles de tournesol, élevages aux céréales) et trop peu d'<strong>Oméga-3</strong> (poissons gras marins riches en EPA/DHA), la membrane se rigidifie.
             Résultat : <strong>les nutriments et l'oxygène pénètrent avec difficulté</strong>, et les toxines cellulaires s'évacuent mal. Cela entretient un feu inflammatoire silencieux.
           </p>

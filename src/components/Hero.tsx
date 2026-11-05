@@ -37,7 +37,7 @@ export const Hero: React.FC = () => {
             </h1>
 
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
-              Plus de <strong>95 % des adultes occidentaux</strong> présentent un déséquilibre critique
+              Plus de <strong>95 % de la population européenne</strong> présente un déséquilibre critique
               entre Oméga-6 et Oméga-3. Ce déséquilibre rigidifie la membrane de vos{' '}
               <strong>37 000 milliards de cellules</strong>, limitant l'absorption des nutriments et
               favorisant fatigue chronique, raideurs et brouillard mental.
@@ -129,9 +129,9 @@ export const Hero: React.FC = () => {
           </div>
           <div>
             <div className="text-2xl lg:text-3xl font-extrabold text-amber-600 dark:text-amber-400 font-display tabular-nums">
-              97 %
+              95 %
             </div>
-            <div className="text-xs text-slate-500 dark:text-slate-400 mt-1">Des personnes testées présentent un ratio déséquilibré</div>
+            <div className="text-xs text-slate-500 dark:text-slate-400 mt-1">De la population européenne présente un ratio déséquilibré</div>
           </div>
           <div>
             <div className="text-2xl lg:text-3xl font-extrabold text-slate-900 dark:text-white font-display tabular-nums">

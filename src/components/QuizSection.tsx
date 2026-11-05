@@ -56,7 +56,7 @@ export const QuizSection: React.FC = () => {
             Vos cellules sont-elles en état d’inflammation silencieuse ?
           </h2>
           <p className="mt-1 text-slate-600 dark:text-slate-400 text-xs sm:text-sm">
-            Détectez en moins de 2 minutes les signaux faibles d'un déséquilibre en acides gras essentiels.
+            Détectez en moins de 2 minutes les signaux faibles d'un déséquilibre lipidique qui touche 95 % des Européens.
           </p>
         </div>
 

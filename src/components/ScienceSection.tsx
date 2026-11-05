@@ -100,7 +100,7 @@ export const ScienceSection: React.FC = () => {
             <div className="bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
               <div className="text-xs font-semibold text-slate-400 uppercase">Alimentation moderne actuelle</div>
               <div className="text-3xl font-extrabold text-rose-600 dark:text-rose-400 font-display mt-2 tabular-nums">15:1 à 25:1</div>
-              <div className="text-xs text-slate-600 dark:text-slate-400 mt-2">Déséquilibre massif chez 95% des occidentaux</div>
+              <div className="text-xs text-slate-600 dark:text-slate-400 mt-2">Déséquilibre massif chez 95 % des Européens</div>
             </div>
           </div>
         </div>
