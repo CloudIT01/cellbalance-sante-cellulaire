@@ -24,7 +24,7 @@ export const EXPERT_VIDEO_URL = 'https://youtu.be/gpnALPCsExs';
  * (nom + adresse). À renseigner quand l'hébergement est choisi : tant qu'il est vide,
  * la section "Hébergement" n'est pas affichée.
  */
-export const LEGAL_HOSTING = '';
+export const LEGAL_HOSTING = 'Site hébergé par GitHub Pages (GitHub, Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, États-Unis).';
 
 /**
  * Adresse du webhook (Make / n8n) qui reçoit les contacts du formulaire.
