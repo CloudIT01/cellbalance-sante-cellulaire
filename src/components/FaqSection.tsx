@@ -13,27 +13,27 @@ export const FaqSection: React.FC = () => {
     {
       question: 'Le prélèvement à domicile est-il douloureux ou difficile à réaliser ?',
       answer:
-        'Pas du tout ! Le kit contient des lancettes stériles automatiques de dernière génération. Il suffit de nettoyer le bout du doigt avec la lingette antiseptique fournie, d’appuyer légèrement la lancette (un micro-picotement de moins d’une seconde), et de déposer deux gouttes de sang sur le papier buvard buvardé. Tout est réalisable seul en moins de 2 minutes chrono.'
+        'Pas du tout ! Le kit contient des lancettes stériles automatiques de dernière génération. Il suffit de nettoyer le bout du doigt avec la lingette antiseptique fournie, d’appuyer légèrement la lancette (un micro-picotement de moins d’une seconde), et de déposer quelques gouttes de sang sur le papier buvard. Tout est réalisable seul en moins de 2 minutes chrono.'
     },
     {
       question: 'Pourquoi une prise de sang classique chez mon médecin ne mesure-t-elle pas cela ?',
       answer:
-        'Les prises de sang conventionnelles en laboratoire de ville dosent les graisses circulantes dans le sérum (triglycérides, cholestérol HDL/LDL). Ces valeurs fluctuent en quelques heures selon votre dernier repas. À l’inverse, le test sanguin séché mesure les acides gras intégrés dans la bicouche lipidique de la membrane des hématies (globules rouges). Cela reflète 120 jours de réalité cellulaire inaltérable.'
+        'Les prises de sang conventionnelles en laboratoire de ville dosent les graisses circulantes dans le sérum (triglycérides, cholestérol HDL/LDL). Ces valeurs fluctuent en quelques heures selon votre dernier repas. À l’inverse, le test sanguin séché mesure les acides gras intégrés dans la bicouche lipidique de la membrane des hématies (globules rouges). Cela reflète environ les 120 derniers jours.'
     },
     {
       question: 'Quel laboratoire analyse mon prélèvement et avec quelles garanties ?',
       answer:
-        'Votre échantillon est analysé par Vitas AS à Oslo (Norvège). C’est un laboratoire chimique et analytique indépendant de renommée mondiale, certifié GMP et accrédité ISO 15189, qui réalise également des recherches pour l’Université de Cambridge, l’Université d’Oxford, Harvard et l’Organisation Mondiale de la Santé (OMS).'
+        'Votre échantillon est analysé par Vitas AS à Oslo (Norvège), un laboratoire analytique indépendant. Selon Zinzino, il est certifié GMP et accrédité ISO 15189, et collabore avec des institutions de recherche internationales.'
     },
     {
       question: 'Mes résultats sont-ils confidentiels et protégés ?',
       answer:
-        'Oui, à 100 %. Le test est totalement anonymisé en double aveugle. Votre prélèvement n’est identifié que par un code alphanumérique unique situé sur votre carte. Seul vous possédez ce code personnel pour vous connecter à la plateforme sécurisée et consulter vos résultats.'
+        'Votre prélèvement n’est identifié que par un code alphanumérique unique situé sur votre carte. Seul vous possédez ce code personnel pour vous connecter à la plateforme sécurisée et consulter vos résultats.'
     },
     {
       question: 'Comment interpréter mes résultats et que faire si mon ratio est déséquilibré ?',
       answer:
-        'Votre rapport de résultats en ligne est extrêmement clair et visuel. Il détaille la proportion exacte de 11 acides gras, votre ratio Oméga-6 : Oméga-3, votre indice de fluidité membranaire et votre score de santé mentale. Si votre ratio dépasse 3:1 (ce qui est le cas de 95 % de la population européenne au premier test), un protocole nutritionnel ciblé associant polyphénols d’olive et oméga-3 sauvages vous permettra de rétablir un équilibre optimal en 120 jours.'
+        'Votre rapport de résultats en ligne détaille la proportion de 11 acides gras et votre ratio Oméga-6 : Oméga-3. Si votre ratio dépasse l’objectif de 3:1 (ce qui est le cas de plus de 95 % des Européens testés, selon Zinzino), Zinzino propose un protocole associant huile d’Oméga-3 et polyphénols d’olive, avec un nouveau test environ 120 jours plus tard pour suivre l’évolution de votre ratio. Les résultats varient d’une personne à l’autre ; pour toute question de santé, demandez conseil à un professionnel de santé.'
     },
     {
       question: 'Combien de temps faut-il pour recevoir les résultats ?',

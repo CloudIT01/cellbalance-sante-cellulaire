@@ -1,10 +1,9 @@
-import React from 'react';
-import { useAffiliate } from '../context/AffiliateContext';
-import { ShieldCheck, Heart, Settings, Code2 } from 'lucide-react';
+import React, { useState } from 'react';
+import { ShieldCheck } from 'lucide-react';
+import { LegalNoticeModal } from './LegalNoticeModal';
 
 export const Footer: React.FC = () => {
-  const { setIsConfigOpen, setIsWordPressExportOpen } = useAffiliate();
-
+  const [legalOpen, setLegalOpen] = useState(false);
   return (
     <footer className="bg-slate-950 text-slate-400 text-xs py-14 border-t border-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
@@ -18,25 +17,8 @@ export const Footer: React.FC = () => {
               <span>CellBalance</span>
             </div>
             <p className="text-slate-400 text-xs leading-relaxed max-w-sm">
-              Plateforme d'information et d'évaluation en santé cellulaire et micronutrition. Dépistage de l’inflammation silencieuse et rééquilibrage du ratio Oméga-6 : Oméga-3.
+              Site d'information sur la santé cellulaire et l'équilibre Oméga-6 / Oméga-3. Site indépendant : ce n'est pas le site officiel de Zinzino.
             </p>
-            <div className="flex items-center gap-4 pt-2">
-              <button
-                onClick={() => setIsConfigOpen(true)}
-                className="text-xs text-emerald-400 hover:text-emerald-300 flex items-center gap-1 cursor-pointer"
-              >
-                <Settings className="w-3.5 h-3.5" />
-                <span>Modifier mon lien affilié</span>
-              </button>
-
-              <button
-                onClick={() => setIsWordPressExportOpen(true)}
-                className="text-xs text-emerald-400 hover:text-emerald-300 flex items-center gap-1 cursor-pointer"
-              >
-                <Code2 className="w-3.5 h-3.5" />
-                <span>Export WordPress</span>
-              </button>
-            </div>
           </div>
 
           {/* Quick Nav */}
@@ -47,7 +29,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-1.5 text-slate-400">
               <li>
                 <a href="#quiz" className="hover:text-emerald-400 transition-colors">
-                  Quiz d'évaluation cellulaire
+                  Quiz de connaissances
                 </a>
               </li>
               <li>
@@ -62,7 +44,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a href="#expert" className="hover:text-emerald-400 transition-colors">
-                  Témoignages & Études cliniques
+                  Avis d'experts & retours de la communauté
                 </a>
               </li>
               <li>
@@ -83,7 +65,7 @@ export const Footer: React.FC = () => {
             </p>
             <div className="flex items-center gap-2 text-emerald-400 text-xs pt-1">
               <ShieldCheck className="w-4 h-4 shrink-0" />
-              <span>Analyse en double aveugle 100% anonymisée</span>
+              <span>Échantillon identifié uniquement par un code personnel</span>
             </div>
           </div>
         </div>
@@ -91,10 +73,10 @@ export const Footer: React.FC = () => {
         {/* Legal & Medical Disclaimers */}
         <div className="pt-8 border-t border-slate-900 space-y-4 text-[11px] text-slate-500 leading-relaxed">
           <p>
-            <strong>Avertissement médical :</strong> Ce quiz d'auto-évaluation et les données partagées sur ce site sont fournis exclusivement à des fins d'information, de sensibilisation et d'orientation nutritionnelle. Ils ne constituent en aucun cas un diagnostic médical ni une prescription thérapeutique. En cas de pathologie ou de traitement en cours (notamment anticoagulants), demandez conseil à votre médecin traitant.
+            <strong>Avertissement médical :</strong> Ce quiz de connaissances et les données partagées sur ce site sont fournis exclusivement à des fins d'information et de sensibilisation. Ils ne constituent en aucun cas un diagnostic médical ni une prescription thérapeutique. En cas de pathologie ou de traitement en cours (notamment anticoagulants), demandez conseil à votre médecin traitant.
           </p>
           <p>
-            <strong>Mention d'affiliation & Transparence :</strong> Cette page intègre des liens d'affiliation vers les solutions de test sanguin et compléments d'équilibre cellulaire. Si vous commandez votre kit via nos liens partenaires, une commission peut nous être reversée sans aucun coût supplémentaire pour vous. Cela contribue au maintien et à l'indépendance de nos outils d'information gratuits.
+            <strong>Mention d'affiliation & Transparence :</strong> Cette page contient des liens affiliés Zinzino. Si vous commandez via ces liens, nous pouvons bénéficier d'un avantage auprès de Zinzino, sans coût supplémentaire pour vous. Les informations chiffrées proviennent des contenus publics de Zinzino.
           </p>
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500">
             <div>
@@ -103,13 +85,16 @@ export const Footer: React.FC = () => {
             <div className="flex items-center gap-4">
               <span>Confidentialité & RGPD</span>
               <span>·</span>
-              <span>Mentions Légales</span>
+              <button type="button" onClick={() => setLegalOpen(true)} className="hover:text-emerald-400 transition-colors underline-offset-2 hover:underline">
+                Mentions Légales
+              </button>
               <span>·</span>
               <span>Conditions Générales</span>
             </div>
           </div>
         </div>
       </div>
+      <LegalNoticeModal open={legalOpen} onClose={() => setLegalOpen(false)} />
     </footer>
   );
 };
