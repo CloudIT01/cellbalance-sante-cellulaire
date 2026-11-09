@@ -2,10 +2,9 @@ import React from 'react';
 import { useAffiliate } from '../context/AffiliateContext';
 import { ExternalLink, Check, ShieldCheck, Clock, Award, Building2, Truck } from 'lucide-react';
 import testKitImg from '../assets/images/blood_spot_test_kit_1793872277021.jpg';
-import { AFFILIATE_REL, AFFILIATE_NOTICE } from '../config';
 
 export const TestKitSection: React.FC = () => {
-  const { affiliateUrl } = useAffiliate();
+  const { affiliateUrl, promoCode } = useAffiliate();
 
   return (
     <section id="test-sanguin" className="py-20 lg:py-28 bg-[#F6FAF7] dark:bg-slate-900/60 border-t border-slate-200/80 dark:border-slate-800 transition-colors">
@@ -14,20 +13,17 @@ export const TestKitSection: React.FC = () => {
           {/* Left: Product Showcase */}
           <div className="lg:col-span-6 space-y-6">
             <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-400">
-              <span>Auto-test à domicile</span>
+              <span>Dispositif Médical d’Autotest Certifié</span>
               <span aria-hidden="true">·</span>
               <span>Analyse Vitas AS</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-display tracking-tight text-balance">
-              Le Test Sanguin Séché (BalanceTest) : mesurez votre ratio Oméga-6 / Oméga-3
+              Le Test Sanguin Séché (BalanceTest) : Votre empreinte biologique exacte
             </h2>
 
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-              Ne devinez plus : <strong>mesurez votre ratio</strong>. Ce test à domicile sur buvard quantifie les acides gras de la membrane de vos globules rouges, ce qui reflète environ les 120 derniers jours.
-            </p>
-            <p className="text-xs text-slate-500 dark:text-slate-400">
-              Ce test ne sert pas à diagnostiquer, traiter ou guérir une maladie et ne remplace pas un avis médical.
+              Ne devinez plus votre état de santé : <strong>mesurez-le avec précision scientifique</strong>. Ce test à domicile sur buvard quantifie le profil lipidique de la membrane de vos globules rouges, reflétant vos 120 derniers jours de nutrition cellulaire.
             </p>
 
             {/* Product image */}
@@ -68,7 +64,7 @@ export const TestKitSection: React.FC = () => {
                   <div>
                     <h4 className="text-sm font-bold text-slate-900 dark:text-white">Votre véritable ratio Oméga-6 / Oméga-3</h4>
                     <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">
-                      Indique la proportion d’Oméga-6 par rapport aux Oméga-3 dans vos globules rouges.
+                      Indique si vos cellules sont en état de protection anti-inflammatoire ou sous tension chronique.
                     </p>
                   </div>
                 </div>
@@ -78,9 +74,9 @@ export const TestKitSection: React.FC = () => {
                     3
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900 dark:text-white">Votre indice Oméga-3</h4>
+                    <h4 className="text-sm font-bold text-slate-900 dark:text-white">Indice de fluidité de la membrane cellulaire</h4>
                     <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">
-                      Part d’EPA et de DHA mesurée dans la membrane de vos globules rouges.
+                      Calcule la vitesse d’échange cellulaire et la perméabilité de vos 37 000 milliards de cellules.
                     </p>
                   </div>
                 </div>
@@ -90,9 +86,9 @@ export const TestKitSection: React.FC = () => {
                     4
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900 dark:text-white">Un point de départ pour suivre votre évolution</h4>
+                    <h4 className="text-sm font-bold text-slate-900 dark:text-white">Indice de protection mentale et cardiaque</h4>
                     <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">
-                      Un second test, environ 120 jours plus tard, permet de comparer vos résultats.
+                      Concentration de DHA et EPA protectrice pour vos neurones et votre système vasculaire.
                     </p>
                   </div>
                 </div>
@@ -120,9 +116,9 @@ export const TestKitSection: React.FC = () => {
               {/* Action Conversion Button */}
               <div className="pt-2">
                 <a
-                  href={affiliateUrl}
+                  href={affiliateUrl || 'https://www.zinzino.com/shop/2017711977/fr/fr-fr/products/shop/home-health-tests/309000'}
                   target="_blank"
-                  rel={AFFILIATE_REL}
+                  rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-bold text-white bg-emerald-700 hover:bg-emerald-800 dark:bg-emerald-600 dark:hover:bg-emerald-500 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer"
                 >
                   <span>Commander mon test à domicile</span>
@@ -130,7 +126,7 @@ export const TestKitSection: React.FC = () => {
                 </a>
 
                 <p className="text-center text-xs text-slate-500 dark:text-slate-400 mt-2.5">
-                  {AFFILIATE_NOTICE}
+                  Contient un lien affilié Zinzino
                 </p>
               </div>
             </div>

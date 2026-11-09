@@ -9,6 +9,8 @@ import { TestKitSection } from './components/TestKitSection';
 import { PractitionerSection } from './components/PractitionerSection';
 import { FaqSection } from './components/FaqSection';
 import { Footer } from './components/Footer';
+import { AffiliateModal } from './components/AffiliateModal';
+import { WordPressExportModal } from './components/WordPressExportModal';
 import { Sparkles, ArrowRight } from 'lucide-react';
 
 function LandingPageContent() {
@@ -26,7 +28,7 @@ function LandingPageContent() {
         <span className="inline-flex items-center gap-1.5">
           <Sparkles className="w-3.5 h-3.5 text-emerald-300" />
           <span>
-            Selon Zinzino, plus de 95 % des Européens testés ont un ratio Oméga-6 / Oméga-3 déséquilibré.
+            95 % des Européens sont en état de déséquilibre cellulaire silencieux.
           </span>
           <button
             onClick={() => scrollTo('quiz')}
@@ -50,12 +52,16 @@ function LandingPageContent() {
 
       <Footer />
 
+      {/* Configuration & Integration Modals */}
+      <AffiliateModal />
+      <WordPressExportModal />
+
       {/* Discreet Mobile Floating CTA (strictly under 15% mobile viewport cap) */}
       <div className="lg:hidden fixed bottom-3 left-3 right-3 z-30">
         <div className="bg-slate-900/95 dark:bg-slate-900/95 backdrop-blur-md text-white p-3 rounded-xl shadow-xl flex items-center justify-between gap-3 border border-emerald-500/30">
           <div className="text-xs">
-            <div className="font-bold leading-tight">Quiz Santé Cellulaire</div>
-            <div className="text-[11px] text-slate-300">Gratuit, en 2 minutes</div>
+            <div className="font-bold leading-tight">Bilan Cellulaire & Ratio 6:3</div>
+            <div className="text-[11px] text-slate-300">Auto-évaluation gratuite</div>
           </div>
           <button
             onClick={() => scrollTo('quiz')}

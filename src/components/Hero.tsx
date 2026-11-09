@@ -1,7 +1,6 @@
 import React from 'react';
-import { ShieldCheck, ArrowRight, Activity, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ShieldCheck, ArrowRight, Activity, Sparkles, CheckCircle2, ExternalLink } from 'lucide-react';
 import heroImg from '../assets/images/hero_cellular_health_1793872277057.jpg';
-import { EXPLORE_URL, AFFILIATE_REL, AFFILIATE_NOTICE } from '../config';
 
 export const Hero: React.FC = () => {
   const scrollTo = (id: string) => {
@@ -30,32 +29,33 @@ export const Hero: React.FC = () => {
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white font-display leading-[1.15] text-balance">
-              Vos cellules disposent-elles d’un bon{' '}
+              Vos cellules respirent-elles ou souffrent-elles{' '}
               <span className="text-emerald-700 dark:text-emerald-400 underline decoration-emerald-200 dark:decoration-emerald-800 decoration-wavy decoration-2">
-                équilibre Oméga-6 / Oméga-3
+                d’inflammation silencieuse
               </span>{' '}
               ?
             </h1>
 
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
-              Selon les données publiques de Zinzino, plus de <strong>95 % des Européens testés</strong> présentent un
-              déséquilibre entre Oméga-6 et Oméga-3. Ce ratio influence la composition de la membrane de vos{' '}
-              <strong>37 000 milliards de cellules</strong>. Le mesurer est la première étape pour mieux le comprendre.
+              Plus de <strong>95 % de la population européenne</strong> présente un déséquilibre critique
+              entre Oméga-6 et Oméga-3. Ce déséquilibre rigidifie la membrane de vos{' '}
+              <strong>37 000 milliards de cellules</strong>, limitant l'absorption des nutriments et
+              favorisant fatigue chronique, raideurs et brouillard mental.
             </p>
 
             {/* Micro-proof bullets */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
               <div className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
-                <span>Quiz de découverte gratuit sur la santé cellulaire</span>
+                <span>Auto-évaluation gratuite sans prise de tête</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
-                <span>Comprendre le rôle des Oméga-3 et des Oméga-6</span>
+                <span>Estimation immédiate de votre ratio Oméga 6:3</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
-                <span>Mesure réelle de votre ratio par test sanguin séché</span>
+                <span>Validation par test sanguin séché certifié</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
@@ -74,15 +74,15 @@ export const Hero: React.FC = () => {
               </button>
 
               <a
-                href={EXPLORE_URL}
+                href="https://www.zinzino.com/2017711977/fr/fr-fr/explore/balance-test"
                 target="_blank"
-                rel={AFFILIATE_REL}
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-4 text-base font-semibold text-slate-800 dark:text-slate-100 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 rounded-xl transition-all duration-200 cursor-pointer shadow-xs"
               >
                 <span>Découvrir le Test Sanguin</span>
+                <ExternalLink className="w-4 h-4 text-slate-400 dark:text-slate-500" />
               </a>
             </div>
-            <p className="text-[11px] text-slate-500 dark:text-slate-400">{AFFILIATE_NOTICE}</p>
 
             {/* Discreet Trust Signal */}
             <div className="flex items-center gap-4 pt-2 text-xs text-slate-500 dark:text-slate-400">
@@ -91,7 +91,7 @@ export const Hero: React.FC = () => {
                 Normes laboratoire GMP & ISO 15189
               </span>
               <span>·</span>
-              <span>Résultats consultables avec un code personnel</span>
+              <span>100% Confidentiel & Anonyme</span>
             </div>
           </div>
 
@@ -110,11 +110,11 @@ export const Hero: React.FC = () => {
                     Indicateur Clé
                   </div>
                   <div className="text-sm font-bold text-slate-900 dark:text-white">
-                    Ratio Oméga-6 / Oméga-3 visé : &le; 3:1
+                    Ratio Oméga-6 / Oméga-3 Optimal : &le; 3:1
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-xs text-slate-500 dark:text-slate-400">Moyenne observée (Zinzino)</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400">Moyenne européenne</div>
                   <div className="text-base font-extrabold text-amber-600 dark:text-amber-400">15:1 à 25:1</div>
                 </div>
               </div>
@@ -123,7 +123,7 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Full-width 4-metric strip below hero */}
-        <div className="mt-14 pt-10 border-t border-slate-200/80 dark:border-slate-800 grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-center">
+        <div className="mt-14 pt-10 border-t border-slate-200/80 dark:border-slate-800 grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           <div>
             <div className="text-2xl lg:text-3xl font-extrabold text-slate-900 dark:text-white font-display tabular-nums">
               +1 250 000
@@ -134,7 +134,7 @@ export const Hero: React.FC = () => {
             <div className="text-2xl lg:text-3xl font-extrabold text-amber-600 dark:text-amber-400 font-display tabular-nums">
               95 %
             </div>
-            <div className="text-xs text-slate-500 dark:text-slate-400 mt-1">Des Européens testés présentent un ratio déséquilibré</div>
+            <div className="text-xs text-slate-500 dark:text-slate-400 mt-1">De la population européenne présente un ratio déséquilibré</div>
           </div>
           <div>
             <div className="text-2xl lg:text-3xl font-extrabold text-slate-900 dark:text-white font-display tabular-nums">
@@ -149,9 +149,6 @@ export const Hero: React.FC = () => {
             <div className="text-xs text-slate-500 dark:text-slate-400 mt-1">Dosés avec précision par spectrométrie de masse</div>
           </div>
         </div>
-        <p className="mt-6 text-[11px] text-slate-400 dark:text-slate-500">
-          Chiffres issus des contenus publics de Zinzino (zinzino.com). Résultats variables selon les personnes.
-        </p>
       </div>
     </section>
   );

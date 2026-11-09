@@ -1,24 +1,41 @@
 export interface QuizOption {
   id: string;
   label: string;
-  correct: boolean;
+  sublabel?: string;
+  points: number; // 0 (ideal) to 3 (high risk)
+  omegaRiskFactor: number; // impact on calculated ratio
 }
 
 export interface QuizQuestion {
   id: string;
-  topic: string; // petit libellé de thème affiché au-dessus de la question
+  category: 'nutrition' | 'symptoms' | 'cognitive' | 'immunity';
+  categoryLabel: string;
   title: string;
-  multiple: boolean; // true : plusieurs bonnes réponses possibles
+  description: string;
   options: QuizOption[];
-  explanation: string; // affichée après validation
+  scientificTip: string;
 }
 
-export interface QuizResult {
-  score: number; // nombre de questions réussies
-  total: number;
+export interface QuizState {
+  answers: Record<string, string>; // questionId -> optionId
+  currentStep: number;
+  isCompleted: boolean;
+}
+
+export type RiskLevel = 'optimal' | 'moderate' | 'elevated' | 'critical';
+
+export interface QuizAnalysisResult {
+  totalScore: number;
+  maxScore: number;
   percentage: number;
-  title: string;
-  message: string;
+  riskLevel: RiskLevel;
+  riskTitle: string;
+  riskDescription: string;
+  estimatedRatio: string;
+  targetRatio: string;
+  membraneFluidityScore: number; // 0 - 100%
+  keyFindings: string[];
+  actionPlan: string[];
 }
 
 export interface LeadData {

@@ -9,7 +9,7 @@ export const ScienceSection: React.FC = () => {
         {/* Section Header */}
         <div className="max-w-3xl mb-14">
           <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-400 mb-2">
-            <span>Biologie cellulaire : les bases</span>
+            <span>Biologie Cellulaire Fondamentale</span>
             <span aria-hidden="true">·</span>
             <span>Comprendre la Membrane</span>
           </div>
@@ -17,7 +17,7 @@ export const ScienceSection: React.FC = () => {
             La santé commence à l'échelle de votre membrane cellulaire
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-            Votre corps compte environ <strong>37 000 milliards de cellules</strong>. Chaque cellule est entourée d’une enveloppe lipidique (bicouche de phospholipides) qui régule tout : les échanges avec l’extérieur : l’entrée de l’oxygène, du glucose et des vitamines, et l’évacuation des déchets.
+            Votre corps compte environ <strong>37 000 milliards de cellules</strong>. Chaque cellule est entourée d’une enveloppe lipidique (bicouche de phospholipides) qui régule tout : l’oxygénation, l’entrée du glucose, des vitamines, et l’évacuation des déchets toxiques.
           </p>
         </div>
 
@@ -48,11 +48,11 @@ export const ScienceSection: React.FC = () => {
                 <span>Membrane Souple & Fluide (Ratio &le; 3:1)</span>
               </div>
               <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-                Riche en <strong>acides gras Oméga-3 polyinsaturés (EPA et DHA)</strong>. Selon Zinzino, la membrane garde alors toute sa souplesse, ce qui favorise les échanges entre la cellule et son environnement.
+                Riche en <strong>acides gras Oméga-3 polyinsaturés (EPA et DHA)</strong>. La membrane reste élastique. Les récepteurs hormonaux (insuline, sérotonine) fonctionnent avec précision. L'oxygène et les micronutriments entrent librement, et les toxines métaboliques sont immédiatement éliminées.
               </p>
               <div className="text-xs font-semibold text-emerald-800 dark:text-emerald-400 flex items-center gap-2 pt-1">
-                <span>À savoir :</span>
-                <span>l’EPA et le DHA contribuent au fonctionnement normal du cœur, et le DHA à celui du cerveau.</span>
+                <span>Conséquence :</span>
+                <span>Énergie stable, esprit clair, défenses immunitaires et récupération rapide.</span>
               </div>
             </div>
 
@@ -60,14 +60,14 @@ export const ScienceSection: React.FC = () => {
             <div className="p-6 rounded-2xl bg-rose-50/50 dark:bg-rose-950/30 border border-rose-200/80 dark:border-rose-900/50 space-y-3">
               <div className="flex items-center gap-2 text-rose-950 dark:text-rose-300 font-bold text-base">
                 <AlertOctagon className="w-5 h-5 text-rose-600 dark:text-rose-400 shrink-0" />
-                <span>Membrane moins équilibrée (ratio &ge; 15:1)</span>
+                <span>Membrane Rigide & Inflammée (Ratio &ge; 15:1)</span>
               </div>
               <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-                Une alimentation très riche en <strong>Oméga-6</strong> et pauvre en <strong>Oméga-3</strong> modifie la composition en acides gras des membranes. Selon Zinzino, c’est le cas d’une grande majorité des Européens testés.
+                Saturée en <strong>acides gras Oméga-6 (acide arachidonique)</strong> et graisses oxydées. La membrane devient étanche et cassante. Les récepteurs cellulaires se désensibilisent. Les déchets s'accumulent à l'intérieur de la cellule et déclenchent une production continue de médiateurs inflammatoires (cytokines, prostaglandines de série 2).
               </p>
               <div className="text-xs font-semibold text-rose-800 dark:text-rose-400 flex items-center gap-2 pt-1">
-                <span>À retenir :</span>
-                <span>seul un test permet de connaître votre ratio réel.</span>
+                <span>Conséquence :</span>
+                <span>Fatigue inexpliquée, douleurs sourdes, raideurs matinales, vieillissement prématuré.</span>
               </div>
             </div>
           </div>
@@ -77,30 +77,30 @@ export const ScienceSection: React.FC = () => {
         <div className="mt-16 p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800">
           <div className="max-w-3xl">
             <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white font-display">
-              Pourquoi ce déséquilibre est-il si répandu ?
+              Pourquoi sommes-nous tous touchés par ce déséquilibre ?
             </h3>
             <p className="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
-              Selon les contenus publics de Zinzino, l'être humain a longtemps évolué avec un régime apportant autant d'Oméga-6 que d'Oméga-3 (ratio proche de 1:1). En quelques décennies, l'agriculture industrielle et les huiles raffinées ont fortement augmenté la consommation d'Oméga-6, tandis que celle d'Oméga-3 marins a diminué.
+              Pendant des centaines de milliers d’années, l'être humain a évolué avec un régime apportant autant d'Oméga-6 que d'Oméga-3 (ratio 1:1). En 70 ans, l'agriculture industrielle et les huiles raffinées ont multiplié par 20 notre consommation d'Oméga-6 tout en réduisant drastiquement les Oméga-3 marins sauvages.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            <div className="bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700 text-center">
-              <div className="text-xs font-semibold text-slate-400 uppercase">Alimentation ancestrale (Zinzino)</div>
+            <div className="bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+              <div className="text-xs font-semibold text-slate-400 uppercase">Génétique humaine originelle</div>
               <div className="text-3xl font-extrabold text-emerald-600 dark:text-emerald-400 font-display mt-2 tabular-nums">1:1</div>
-              <div className="text-xs text-slate-600 dark:text-slate-400 mt-2">Ratio Oméga-6 / Oméga-3 estimé</div>
+              <div className="text-xs text-slate-600 dark:text-slate-400 mt-2">Équilibre parfait entre pro- et anti-inflammatoire</div>
             </div>
 
-            <div className="bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700 text-center">
-              <div className="text-xs font-semibold text-slate-400 uppercase">Objectif Zinzino (Balance Concept)</div>
+            <div className="bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
+              <div className="text-xs font-semibold text-slate-400 uppercase">Recommandation OMS & EFSA</div>
               <div className="text-3xl font-extrabold text-slate-900 dark:text-white font-display mt-2 tabular-nums">&le; 3:1</div>
-              <div className="text-xs text-slate-600 dark:text-slate-400 mt-2">Ratio cible visé par le protocole</div>
+              <div className="text-xs text-slate-600 dark:text-slate-400 mt-2">Seuil de protection cardiovasculaire et cellulaire</div>
             </div>
 
-            <div className="bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700 text-center">
+            <div className="bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
               <div className="text-xs font-semibold text-slate-400 uppercase">Alimentation moderne actuelle</div>
               <div className="text-3xl font-extrabold text-rose-600 dark:text-rose-400 font-display mt-2 tabular-nums">15:1 à 25:1</div>
-              <div className="text-xs text-slate-600 dark:text-slate-400 mt-2">Moyenne observée chez 95 % des Européens testés (Zinzino)</div>
+              <div className="text-xs text-slate-600 dark:text-slate-400 mt-2">Déséquilibre massif chez 95 % des Européens</div>
             </div>
           </div>
         </div>
