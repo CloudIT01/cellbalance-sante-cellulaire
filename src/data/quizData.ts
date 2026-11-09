@@ -1,354 +1,178 @@
-import { QuizQuestion, QuizAnalysisResult, RiskLevel } from '../types/quiz';
+import { QuizQuestion, QuizResult } from '../types/quiz';
+
+// Quiz de connaissances (version validée par Charly le 2026-11-06).
+// Contenu éducatif : aucune allégation thérapeutique, chiffres attribués à Zinzino.
+// Q4 : formulation de l'allégation DHA alignée sur le règlement (UE) n° 432/2012 (EUR-Lex, vérifié le 2026-11-06).
 
 export const QUIZ_QUESTIONS: QuizQuestion[] = [
   {
-    id: 'q1_fish',
-    category: 'nutrition',
-    categoryLabel: 'Pôle 1 : Apports Alimentaires en Lipides',
-    title: 'À quelle fréquence consommez-vous des poissons gras sauvages (sardines, maquereaux, anchois, saumon sauvage) ?',
-    description: 'Ces poissons sont la seule source directe et hautement biodisponible en acides gras polyinsaturés Oméga-3 à longue chaîne (EPA et DHA).',
+    id: 'q1_membrane',
+    topic: "La membrane cellulaire",
+    title: "Quel est le rôle fondamental de la membrane cellulaire ?",
+    multiple: false,
     options: [
-      {
-        id: 'opt1',
-        label: 'Au moins 2 à 3 fois par semaine',
-        sublabel: 'Régime riche en poissons gras frais ou marinés',
-        points: 0,
-        omegaRiskFactor: 0.1
-      },
-      {
-        id: 'opt2',
-        label: 'Environ 1 fois par semaine',
-        sublabel: 'Consommation occasionnelle',
-        points: 1,
-        omegaRiskFactor: 0.4
-      },
-      {
-        id: 'opt3',
-        label: 'Rarement (1 à 2 fois par mois)',
-        sublabel: 'Préfère les viandes ou poissons blancs',
-        points: 2,
-        omegaRiskFactor: 0.75
-      },
-      {
-        id: 'opt4',
-        label: 'Jamais ou presque jamais',
-        sublabel: 'Végétarien, végan ou aversion pour les produits marins',
-        points: 3,
-        omegaRiskFactor: 1.0
-      }
+      { id: 'a', label: "Elle synthétise directement le glucose nécessaire à la cellule.", correct: false },
+      { id: 'b', label: "Elle régule les échanges entre la cellule et l’extérieur.", correct: true },
+      { id: 'c', label: "Elle sert uniquement de barrière contre les rayons ultraviolets.", correct: false },
+      { id: 'd', label: "Elle bloque en permanence tout échange avec l’extérieur.", correct: false },
     ],
-    scientificTip: '95 % de la population européenne ne consomme pas assez d’EPA/DHA pour protéger ses membranes cellulaires de l’oxydation.'
+    explanation:
+      "La membrane contrôle les échanges de la cellule avec son environnement. Selon Zinzino, sa composition en acides gras influence sa souplesse.",
   },
   {
-    id: 'q2_oils',
-    category: 'nutrition',
-    categoryLabel: 'Pôle 1 : Apports Alimentaires en Lipides',
-    title: 'Quelle est la place des huiles riches en Oméga-6 et des produits industriels dans vos repas ?',
-    description: 'Huile de tournesol, maïs, soja, plats préparés, sauces industrielles, viennoiseries, fritures et snacks.',
+    id: 'q2_ratio',
+    topic: "Le ratio cible",
+    title: "Quel ratio oméga-6 / oméga-3 Zinzino fixe-t-il comme objectif avec son protocole ?",
+    multiple: false,
     options: [
-      {
-        id: 'opt1',
-        label: 'Quotidienne ou très fréquente',
-        sublabel: 'Repas à l’extérieur, plats cuisinés, cuisson au tournesol/friture',
-        points: 3,
-        omegaRiskFactor: 1.0
-      },
-      {
-        id: 'opt2',
-        label: 'Modérée (plusieurs fois par semaine)',
-        sublabel: 'Mélange de cuisine maison et de produits transformés',
-        points: 2,
-        omegaRiskFactor: 0.65
-      },
-      {
-        id: 'opt3',
-        label: 'Faible et contrôlée',
-        sublabel: 'Cuisine maison majoritaire, huiles vierges d’olive et de colza',
-        points: 1,
-        omegaRiskFactor: 0.3
-      },
-      {
-        id: 'opt4',
-        label: 'Strictement évitée',
-        sublabel: '100% bio brut, aucune huile de tournesol ou plat industriel',
-        points: 0,
-        omegaRiskFactor: 0.05
-      }
+      { id: 'a', label: "3:1 ou moins", correct: true },
+      { id: 'b', label: "20:1", correct: false },
+      { id: 'c', label: "0:1", correct: false },
+      { id: 'd', label: "50:1", correct: false },
     ],
-    scientificTip: 'L’excès d’acide linoléique (Oméga-6) sature les enzymes de conversion et génère des médiateurs pro-inflammatoires (acide arachidonique).'
+    explanation:
+      "3:1 ou moins est l’objectif de Zinzino avec son protocole (Balance Concept). Ce n’est pas un seuil médical.",
   },
   {
-    id: 'q3_fatigue',
-    category: 'symptoms',
-    categoryLabel: 'Pôle 2 : Signes Cellulaires & Énergie',
-    title: 'Ressentez-vous une fatigue inexpliquée ou un manque d’énergie au réveil ?',
-    description: 'Quand les membranes cellulaires manquent de fluidité, le passage de l’oxygène et des nutriments vers les mitochondries est ralenti.',
+    id: 'q3_symptomes',
+    topic: "Repères et symptômes",
+    title: "Peut-on connaître son ratio oméga-6 / oméga-3 à partir de ses symptômes ?",
+    multiple: false,
     options: [
-      {
-        id: 'opt1',
-        label: 'Souvent : réveil lourd, coup de pompe dès 14h-15h',
-        sublabel: 'Besoin fréquent de stimulants (café, sucre) pour tenir',
-        points: 3,
-        omegaRiskFactor: 0.9
-      },
-      {
-        id: 'opt2',
-        label: 'Par périodes : fluctuations d’énergie régulières',
-        sublabel: 'Fatigue variable selon le niveau de charge mentale',
-        points: 2,
-        omegaRiskFactor: 0.6
-      },
-      {
-        id: 'opt3',
-        label: 'Rarement : bonne vitalité globale',
-        sublabel: 'Coup de fatigue uniquement après une nuit trop courte',
-        points: 1,
-        omegaRiskFactor: 0.25
-      },
-      {
-        id: 'opt4',
-        label: 'Jamais : énergie stable et dynamique toute la journée',
-        sublabel: 'Réveil alerte et récupération naturelle rapide',
-        points: 0,
-        omegaRiskFactor: 0.05
-      }
+      { id: 'a', label: "Oui, la fatigue révèle un déséquilibre.", correct: false },
+      { id: 'b', label: "Oui, les douleurs articulaires le confirment.", correct: false },
+      { id: 'c', label: "Oui, l’aspect de la peau le révèle.", correct: false },
+      { id: 'd', label: "Non, seule une mesure le permet.", correct: true },
     ],
-    scientificTip: 'Les mitochondries ("centrales énergétiques" cellulaires) ont besoin d’acides gras polyinsaturés flexibles pour produire l’ATP.'
+    explanation:
+      "Les symptômes ne permettent pas de connaître son ratio : seule une mesure le peut. En cas de gêne, parlez-en à un professionnel de santé.",
   },
   {
-    id: 'q4_joints',
-    category: 'symptoms',
-    categoryLabel: 'Pôle 2 : Signes Cellulaires & Énergie',
-    title: 'Ressentez-vous des raideurs musculaires ou une sensibilité articulaire au réveil ?',
-    description: 'Une inflammation de bas grade non régulée se manifeste d’abord par des tensions ligamentaires et articulaires au lever.',
+    id: 'q4_dha',
+    topic: "Le DHA",
+    title: "Selon les allégations de santé autorisées dans l’Union européenne, à quoi contribue le DHA ?",
+    multiple: false,
     options: [
-      {
-        id: 'opt1',
-        label: 'Oui, raideurs ou gênes articulaires fréquentes le matin',
-        sublabel: 'Besoin d’un temps de dérouillage avant d’être à l’aise',
-        points: 3,
-        omegaRiskFactor: 0.9
-      },
-      {
-        id: 'opt2',
-        label: 'Parfois, après un effort physique ou par temps humide',
-        sublabel: 'Courbatures qui persistent plus de 48h',
-        points: 2,
-        omegaRiskFactor: 0.6
-      },
-      {
-        id: 'opt3',
-        label: 'Très occasionnellement',
-        sublabel: 'Tensions légères passagères',
-        points: 1,
-        omegaRiskFactor: 0.25
-      },
-      {
-        id: 'opt4',
-        label: 'Non, articulations et muscles souples sans gêne',
-        sublabel: 'Excellente mobilité et récupération articulaire',
-        points: 0,
-        omegaRiskFactor: 0.05
-      }
+      { id: 'a', label: "À soigner les maladies du système nerveux central.", correct: false },
+      { id: 'b', label: "À transformer les graisses saturées en protéines.", correct: false },
+      { id: 'c', label: "Au fonctionnement normal du cerveau (250 mg de DHA par jour).", correct: true },
+      { id: 'd', label: "À remplacer l’eau et les minéraux dont le cerveau a besoin.", correct: false },
     ],
-    scientificTip: 'L’EPA permet la synthèse des résolvines et protectines, des molécules qui éteignent naturellement les feux inflammatoires articulaires.'
+    explanation:
+      "L’allégation autorisée dans l’Union européenne (règlement (UE) n° 432/2012) est que le DHA contribue au fonctionnement normal du cerveau. L’effet bénéfique est obtenu par une consommation journalière de 250 mg de DHA.",
   },
   {
-    id: 'q5_skin',
-    category: 'symptoms',
-    categoryLabel: 'Pôle 2 : Signes Cellulaires & Énergie',
-    title: 'Comment qualifieriez-vous l’état de votre peau, de vos yeux et de vos cheveux ?',
-    description: 'La peau et les muqueuses sont le miroir direct de la qualité lipidique de vos membranes cellulaires.',
+    id: 'q5_sang_seche',
+    topic: "Le prélèvement de sang séché",
+    title: "Quelles caractéristiques décrit-on pour le prélèvement de sang séché ?",
+    multiple: true,
     options: [
-      {
-        id: 'opt1',
-        label: 'Peau sèche, tiraillements fréquents, rougeurs ou sécheresse oculaire',
-        sublabel: 'Tendance aux irritations, cheveux secs ou ongles cassants',
-        points: 3,
-        omegaRiskFactor: 0.85
-      },
-      {
-        id: 'opt2',
-        label: 'Peau mixte à déshydratée selon la saison',
-        sublabel: 'Nécessite une hydratation constante pour ne pas tirailler',
-        points: 2,
-        omegaRiskFactor: 0.5
-      },
-      {
-        id: 'opt3',
-        label: 'Peau normale avec peu de sensibilité',
-        sublabel: 'Confort cutané satisfaisant',
-        points: 1,
-        omegaRiskFactor: 0.2
-      },
-      {
-        id: 'opt4',
-        label: 'Peau souple, lumineuse et bien hydratée naturellement',
-        sublabel: 'Barrière lipidique cutanée optimale',
-        points: 0,
-        omegaRiskFactor: 0.05
-      }
+      { id: 'a', label: "Une stabilité à température ambiante, sans chaîne du froid.", correct: true },
+      { id: 'b', label: "Une ponction veineuse de plusieurs millilitres à l’hôpital.", correct: false },
+      { id: 'c', label: "Une technologie ancienne, utilisée pour le dépistage néonatal.", correct: true },
+      { id: 'd', label: "Un autotest à domicile par une piqûre au bout du doigt.", correct: true },
     ],
-    scientificTip: 'Une membrane cellulaire appauvrie en acides gras essentiels perd sa capacité de rétention d’eau intracellulaire.'
+    explanation:
+      "Le sang séché se conserve à température ambiante, repose sur une technologie utilisée depuis plusieurs décennies (notamment pour le dépistage néonatal) et se prélève chez soi par une piqûre au bout du doigt. Aucune ponction veineuse n’est nécessaire.",
   },
   {
-    id: 'q6_brain',
-    category: 'cognitive',
-    categoryLabel: 'Pôle 3 : Clarté Mentale & Fonctions Cérébrales',
-    title: 'Éprouvez-vous du brouillard mental (brain fog), des baisses de concentration ou de l’irritabilité ?',
-    description: 'Le cerveau est composé à plus de 60 % de graisses, dont une part majeure de DHA constituant les synapses nerveuses.',
+    id: 'q6_chiffre',
+    topic: "Un chiffre à bien lire",
+    title: "Selon Zinzino, quelle proportion des Européens testés présente un ratio déséquilibré lors du premier test ?",
+    multiple: false,
     options: [
-      {
-        id: 'opt1',
-        label: 'Fréquemment : difficulté à me concentrer, charge mentale pesante',
-        sublabel: 'Perte de vivacité cognitive en fin de matinée ou d’après-midi',
-        points: 3,
-        omegaRiskFactor: 0.95
-      },
-      {
-        id: 'opt2',
-        label: 'Modérément : sautes de concentration en période de stress',
-        sublabel: 'Humeur plus réactive que souhaité',
-        points: 2,
-        omegaRiskFactor: 0.6
-      },
-      {
-        id: 'opt3',
-        label: 'Rarement : esprit clair la plupart du temps',
-        sublabel: 'Bonne mémoire de travail et gestion du stress',
-        points: 1,
-        omegaRiskFactor: 0.2
-      },
-      {
-        id: 'opt4',
-        label: 'Jamais : concentration soutenue, clarté mentale et calme',
-        sublabel: 'Excellente résilience émotionnelle',
-        points: 0,
-        omegaRiskFactor: 0.05
-      }
+      { id: 'a', label: "50 %", correct: false },
+      { id: 'b', label: "Plus de 95 %", correct: true },
+      { id: 'c', label: "10 %", correct: false },
+      { id: 'd', label: "2 %", correct: false },
     ],
-    scientificTip: 'Le DHA est le carburant structural de la gaine de myéline et assure la vitesse de conduction des signaux neuronaux.'
+    explanation:
+      "Selon Zinzino, plus de 95 % des Européens testés présentent un ratio déséquilibré lors du premier test. Ce chiffre concerne les personnes qui ont fait le test, pas toute la population.",
   },
   {
-    id: 'q7_immunity',
-    category: 'immunity',
-    categoryLabel: 'Pôle 4 : Résilience Immunitaire',
-    title: 'Comment réagit votre organisme aux changements de saison et aux agressions extérieures ?',
-    description: 'L’équilibre des acides gras régule la balance entre la réponse immunitaire protectrice et l’auto-inflammation chronique.',
+    id: 'q7_finalite',
+    topic: "La finalité du test",
+    title: "Que précise Zinzino sur la finalité du BalanceTest ?",
+    multiple: false,
     options: [
-      {
-        id: 'opt1',
-        label: 'Je contracte facilement les coups de froid et mets du temps à récupérer',
-        sublabel: 'Système immunitaire souvent mis à rude épreuve',
-        points: 3,
-        omegaRiskFactor: 0.85
-      },
-      {
-        id: 'opt2',
-        label: '1 à 2 épisodes par an avec baisse de régime notable',
-        sublabel: 'Résilience moyenne face aux virus de saison',
-        points: 2,
-        omegaRiskFactor: 0.55
-      },
-      {
-        id: 'opt3',
-        label: 'Très résistant, épisodes très rares et vite surmontés',
-        sublabel: 'Défenses naturelles efficaces',
-        points: 1,
-        omegaRiskFactor: 0.2
-      },
-      {
-        id: 'opt4',
-        label: 'Excellente immunité, je ne suis pratiquement jamais malade',
-        sublabel: 'Récupération rapide et vitalité inaltérée',
-        points: 0,
-        omegaRiskFactor: 0.05
-      }
+      { id: 'a', label: "Il diagnostique des maladies.", correct: false },
+      { id: 'b', label: "Il remplace une consultation médicale.", correct: false },
+      { id: 'c', label: "Il est réservé aux sportifs de haut niveau.", correct: false },
+      { id: 'd', label: "Il mesure des acides gras, sans poser de diagnostic.", correct: true },
     ],
-    scientificTip: 'L’EFSA (Autorité Européenne de Sécurité des Aliments) reconnaît le rôle fondamental des Oméga-3 EPA/DHA dans l’équilibre immunitaire.'
-  }
+    explanation:
+      "Selon la page produit de Zinzino, le BalanceTest mesure des acides gras sur goutte de sang séché et ne sert pas à diagnostiquer, traiter ni guérir une maladie. Il ne remplace pas un avis médical.",
+  },
+  {
+    id: 'q8_rapport',
+    topic: "Le rapport du test",
+    title: "Quelles mesures figurent dans le rapport du BalanceTest ?",
+    multiple: true,
+    options: [
+      { id: 'a', label: "La glycémie à jeun.", correct: false },
+      { id: 'b', label: "L’indice oméga-3 (EPA et DHA).", correct: true },
+      { id: 'c', label: "Le ratio oméga-6 / oméga-3.", correct: true },
+      { id: 'd', label: "Le niveau d’acide arachidonique (AA).", correct: true },
+    ],
+    explanation:
+      "Le rapport présente notamment l’indice oméga-3, le ratio oméga-6 / oméga-3 et le niveau d’acide arachidonique (AA). Il ne mesure pas la glycémie.",
+  },
+  {
+    id: 'q9_protocole',
+    topic: "Le protocole Balance Concept",
+    title: "Selon Zinzino, quelle démarche accompagne le Balance Concept ?",
+    multiple: false,
+    options: [
+      { id: 'a', label: "Mesurer son ratio, prendre des oméga-3 et polyphénols d’olive, retester.", correct: true },
+      { id: 'b', label: "Supprimer toutes les graisses de son alimentation pendant 120 jours.", correct: false },
+      { id: 'c', label: "Augmenter les huiles riches en oméga-6, comme l’huile de soja.", correct: false },
+      { id: 'd', label: "Remplacer l’eau par des boissons sucrées au quotidien.", correct: false },
+    ],
+    explanation:
+      "Selon Zinzino, le Balance Concept associe une mesure initiale du ratio, des oméga-3 (EPA/DHA) avec des polyphénols d’olive, puis un second test environ 120 jours plus tard pour suivre l’évolution.",
+  },
+  {
+    id: 'q10_omega6',
+    topic: "Oméga-6 et oméga-3",
+    title: "Les oméga-6 sont-ils à supprimer de l’alimentation ?",
+    multiple: false,
+    options: [
+      { id: 'a', label: "Oui, ils sont toujours nocifs pour l’organisme.", correct: false },
+      { id: 'b', label: "Oui, ils font grossir dès qu’on en consomme.", correct: false },
+      { id: 'c', label: "Non : acides gras essentiels, c’est l’équilibre qui compte.", correct: true },
+      { id: 'd', label: "Non, car ils réparent les tissus abîmés du corps.", correct: false },
+    ],
+    explanation:
+      "Oméga-6 et oméga-3 sont des acides gras essentiels : le corps ne les fabrique pas, ils viennent de l’alimentation. Selon Zinzino, c’est l’équilibre entre les deux qui compte.",
+  },
 ];
 
-export function calculateQuizResult(answers: Record<string, string>): QuizAnalysisResult {
-  let totalScore = 0;
-  let maxScore = 0;
-  let riskFactorSum = 0;
-  let questionCount = 0;
+/** Une question est réussie si la sélection correspond exactement aux bonnes réponses. */
+export function isQuestionCorrect(question: QuizQuestion, selected: string[] | undefined): boolean {
+  if (!selected || selected.length === 0) return false;
+  const correctIds = question.options.filter((o) => o.correct).map((o) => o.id).sort();
+  const picked = [...selected].sort();
+  return correctIds.length === picked.length && correctIds.every((id, i) => id === picked[i]);
+}
 
-  for (const q of QUIZ_QUESTIONS) {
-    maxScore += 3;
-    questionCount++;
-    const selectedOptionId = answers[q.id];
-    const option = q.options.find((opt) => opt.id === selectedOptionId);
-    if (option) {
-      totalScore += option.points;
-      riskFactorSum += option.omegaRiskFactor;
-    } else {
-      // Default fallback
-      totalScore += 2;
-      riskFactorSum += 0.6;
-    }
+export function calculateQuizResult(answers: Record<string, string[]>): QuizResult {
+  const total = QUIZ_QUESTIONS.length;
+  const score = QUIZ_QUESTIONS.filter((q) => isQuestionCorrect(q, answers[q.id])).length;
+  const percentage = Math.round((score / total) * 100);
+
+  let title = 'Des bases à consolider';
+  let message =
+    'Ce sujet est riche et plein de nuances : il est normal de ne pas tout connaître. Reprenez les explications de chaque question pour retenir les repères essentiels.';
+
+  if (score >= 8) {
+    title = 'Excellent niveau de connaissances';
+    message =
+      'Vous maîtrisez l’essentiel sur la membrane cellulaire, les oméga et le principe du test. Pour aller plus loin, la mesure de votre propre ratio est l’étape suivante possible.';
+  } else if (score >= 5) {
+    title = 'Vous maîtrisez l’essentiel';
+    message =
+      'Vous avez de bons repères sur la santé cellulaire et les oméga. Relisez les explications des questions manquées pour compléter votre compréhension.';
   }
 
-  const percentage = Math.round((totalScore / maxScore) * 100);
-  const avgRisk = riskFactorSum / questionCount;
-
-  let riskLevel: RiskLevel = 'moderate';
-  let riskTitle = 'Déséquilibre modéré à surveiller';
-  let riskDescription = 'Vos réponses révèlent des premiers signes d’inflammation de bas grade et un apport d’Oméga-3 probablement insuffisant pour compenser vos apports en Oméga-6.';
-  let estimatedRatio = '12:1 à 18:1';
-  let targetRatio = '3:1 ou inférieur';
-  let membraneFluidityScore = 45; // percentage
-
-  if (avgRisk >= 0.75 || percentage >= 70) {
-    riskLevel = 'critical';
-    riskTitle = 'Risque élevé d’inflammation cellulaire silencieuse';
-    riskDescription = 'Vos cellules subissent un stress lipidique majeur. La surreprésentation d’Oméga-6 pro-inflammatoires dans vos tissus rigifie vos membranes cellulaires et entrave la microcirculation et l’élimination des toxines.';
-    estimatedRatio = '22:1 à 35:1';
-    membraneFluidityScore = 24;
-  } else if (avgRisk >= 0.45 || percentage >= 45) {
-    riskLevel = 'elevated';
-    riskTitle = 'Déséquilibre lipidique cellulaire significatif';
-    riskDescription = 'Votre profil indique une membrane cellulaire fragilisée. Bien que votre organisme compense pour l’instant, ce déséquilibre chronique nourrit une fatigue récurrente et une baisse de résilience articulaire et cognitive.';
-    estimatedRatio = '15:1 à 22:1';
-    membraneFluidityScore = 42;
-  } else if (avgRisk >= 0.25 || percentage >= 25) {
-    riskLevel = 'moderate';
-    riskTitle = 'Déséquilibre modéré : vigilance recommandée';
-    riskDescription = 'Votre mode de vie présente des points forts, mais des signaux faibles (récupération, peau, concentration) laissent présager un ratio Oméga-6:3 supérieur aux recommandations des autorités de santé.';
-    estimatedRatio = '8:1 à 14:1';
-    membraneFluidityScore = 65;
-  } else {
-    riskLevel = 'optimal';
-    riskTitle = 'Profil protecteur favorable';
-    riskDescription = 'Excellents apports alimentaires et bonne souplesse cellulaire apparente. Néanmoins, seul un dosage sanguin direct en laboratoire permet de confirmer la concentration réelle en EPA/DHA dans vos érythrocytes.';
-    estimatedRatio = '3:1 à 6:1';
-    membraneFluidityScore = 88;
-  }
-
-  const keyFindings: string[] = [
-    `Ratio Oméga-6 / Oméga-3 estimé : ${estimatedRatio} (Norme OMS recommandée ≤ 3:1 vs moyenne de 15:1 touchant 95 % des Européens).`,
-    `Score estimé de perméabilité membranaire : ${membraneFluidityScore}% (une membrane souple permet l’entrée des nutriments et la sortie des toxines).`,
-    'Tendance marquée à l’accumulation d’acides gras pro-inflammatoires (acide arachidonique issu des huiles et élevages industriels).'
-  ];
-
-  const actionPlan: string[] = [
-    'Objectiver votre situation réelle par un test sanguin séché sur buvard (BalanceTest) certifié GMP et analysé par un laboratoire indépendant.',
-    'Réguler les sources d’huiles végétales industrielles (tournesol, maïs) et privilégier l’huile d’olive vierge extra riche en polyphénols.',
-    'Rééquilibrer vos membranes grâce à une huile d’équilibre purifiée combinant Oméga-3 marins sauvages et polyphénols d’olive protecteurs contre l’oxydation.'
-  ];
-
-  return {
-    totalScore,
-    maxScore,
-    percentage,
-    riskLevel,
-    riskTitle,
-    riskDescription,
-    estimatedRatio,
-    targetRatio,
-    membraneFluidityScore,
-    keyFindings,
-    actionPlan
-  };
+  return { score, total, percentage, title, message };
 }
